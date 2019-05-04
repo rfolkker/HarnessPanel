@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script>
-		/* This script uses cep_node to start the Node.js server located at '/server/main.js' */
-		alert(__dirname + '\\main.js');
-	    var localServer = cep_node.require(__dirname + '\\main.js')();
-	</script>
     <meta charset="utf-8">
     <title>Your First Panel</title>
 </head>
@@ -16,5 +11,10 @@
     /* Add your script dependencies here. */
     <script type="text/javascript" src="lib/CSInterface.js"></script>
     <script type="text/javascript" src="index.js"></script>
+	<script>
+		/* This script uses cep_node to start the Node.js server located at '/server/main.js' */
+		alert(__dirname + '\\main.js');
+	    var localServer = cep_node.require(__dirname + '\\main.js')();
+	</script>
 </body>
 </html>
