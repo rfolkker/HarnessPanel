@@ -19,7 +19,7 @@ function run(){
 	/* Middlewares */
 	app.use(bodyParser.json());
 	app.use(bodyParser.urlencoded({ limit: '50mb',extended: true }));
-	app.use(express.static(path.join(__dirname, "../client")));
+	app.use(express.static(path.join(__dirname, "../css")));
 
 	/* /import route that can be hit from the client side */
 	app.get("/import", (req, res, next) => {
