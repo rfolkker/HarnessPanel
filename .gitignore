@@ -83,8 +83,5 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-# Debug file
-.debug
-
 # Library files
 lib/
