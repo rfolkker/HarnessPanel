@@ -6,6 +6,3 @@ openButton.addEventListener("click", openDoc);
 function openDoc() {
   csInterface.evalScript("openDocument()");
 }
-
-/* 2) Use a CEP method to open the server extension. */
-csInterface.requestOpenExtension("com.dnv.localserver", "");
