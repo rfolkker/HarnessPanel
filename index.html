@@ -1,20 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
+<!--
+/*************************************************************************
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+* Copyright 2014 Adobe
+* All Rights Reserved.
+*
+* NOTICE: Adobe permits you to use, modify, and distribute this file in
+* accordance with the terms of the Adobe license agreement accompanying
+* it. If you have received this file from a source other than Adobe,
+* then your use, modification, or distribution of it requires the prior
+* written permission of Adobe. 
+**************************************************************************/
+-->
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>Your First Panel</title>
+	<meta charset="utf-8">
+	<script src="./ext.js"></script>
+	<script src="./lib/CSInterface.js"></script>
+	<script src="./lib/jquery-1.9.1.js"></script>
+	<script src="./lib/Vulcan.js"></script>
+	<link id="ppstyle" href="css/style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			// For functions which require interaction at the JavaScript level, we provide these JQuery-based
+			// handlers, instead of directly invoking ExtendScript .This givs the JavaScript layer a chance
+			// to pass data into the ExtendScript layer, and process the results.
+
+
+		});
+	</script>
 </head>
-<body>
-    /* Simple HTML UI elements to get us started. */
-    <h1>Your first panel in 6 easy steps</h1>
-    <button id="open-button">Open</button>
-    /* Add your script dependencies here. */
-    <script type="text/javascript" src="lib/CSInterface.js"></script>
-    <script type="text/javascript" src="index.js"></script>
-	<script>
+
+<body onLoad="onLoaded()">
+    <a href="javascript:history.go(0)">Refresh panel</a>
+    <h3>NodeJS Test on port 3200</h3>
+</body>
+<script>
+	document.body.onbeforeunload = function () {
+		var csInterface = new CSInterface();
+		var OSVersion = csInterface.getOSInformation();
+		var appVersion = csInterface.hostEnvironment.appVersion;
+		var versionAsFloat = parseFloat(appVersion);
+		
+		// alert(__dirname + '\\main.js');
+	    var localServer = cep_node.require(__dirname + '\\main.js')();
+
+        csInterface.evalScript('$._PPP_.closeLog()');
+	};
+</script>
+<script>
 		/* This script uses cep_node to start the Node.js server located at '/server/main.js' */
+		var csInterface = new CSInterface();
 		alert(__dirname + '\\main.js');
 	    var localServer = cep_node.require(__dirname + '\\main.js')();
-	</script>
-</body>
+</script>
+
 </html>
