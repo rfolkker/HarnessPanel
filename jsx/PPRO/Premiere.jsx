@@ -47,7 +47,7 @@ $._PPP_={
 	},
 
 	keepPanelLoaded : function() {
-		app.setExtensionPersistent("com.adobe.PProPanel", 0); // 0, while testing (to enable rapid reload); 1 for "Never unload me, even when not visible."
+		app.setExtensionPersistent("com.dnv.HarnessPanel", 0); // 0, while testing (to enable rapid reload); 1 for "Never unload me, even when not visible."
 	},
 
 	updateGrowingFile : function() {

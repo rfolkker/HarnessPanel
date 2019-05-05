@@ -15,12 +15,11 @@
 **************************************************************************/
 -->	
 <ExtensionManifest Version="5.0" ExtensionBundleId="com.dnv.HarnessPanel" ExtensionBundleVersion="11.1"
-ExtensionBundleName="Premiere Pro sample panel" 
+ExtensionBundleName="Remote Execution Panel" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<ExtensionList>
-		<Extension Id="com.dnv.HarnessPanel" Version="1.0.0" />
-		<Extension Id="com.dnv.localserver" Version="1.0.0" />
-		</ExtensionList>
+		<Extension Id="com.dnv.HarnessPanel" Version="1.1.0" />
+	</ExtensionList>
 	<ExecutionEnvironment>
 		<HostList>
 			<Host Name="PPRO" Version="9.0" />
