@@ -21,7 +21,9 @@
 	<script src="./ext.js"></script>
 	<script src="./lib/CSInterface.js"></script>
 	<script src="./lib/jquery-1.9.1.js"></script>
-	<script src="./lib/Vulcan.js"></script>
+    <script src="./lib/Vulcan.js"></script>
+    <script src="./main.js"></script>
+
 	<link id="ppstyle" href="css/style.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript">
 		$(document).ready(function () {
@@ -45,9 +47,6 @@
 		var OSVersion = csInterface.getOSInformation();
 		var appVersion = csInterface.hostEnvironment.appVersion;
 		var versionAsFloat = parseFloat(appVersion);
-		
-		// alert(__dirname + '\\main.js');
-	    var localServer = cep_node.require(__dirname + '\\main.js')();
 
         csInterface.evalScript('$._PPP_.closeLog()');
 	};
