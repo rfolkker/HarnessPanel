@@ -25,26 +25,21 @@ function run(){
 		res.status(200).send("Hello world");
 	});
 	
-	/* /import route that can be hit from the client side */
-	app.get("/import", (req, res, next) => {
+	app.get("/exportDOM", (req,res,next) =>{
+		var csInterface = new CSInterface();
+		const exportDOMAction = (res, result) => {
+			res.status(200).send(result);
+		};
 		
-		/* Get the directory path from the header and name the file */
-		var path = req.headers["directory"] + "/placeholder.png"
-
-		/* This is an example URL */
-		var uri = "https://cdn-images-1.medium.com/max/800/1*oAeMgTGdZTw8rriJQU3Iiw@2x.png";
-		
-		/* write a helper function to download the image and save it */
-		var saveImage = function(uri, filepath, callback){
-			request.head(uri, function(err, res, body){
-				request(uri).pipe(fs.createWriteStream(filepath)).on('close', callback);
-			});
+		const embeddedCall = (fn, ...fixedArgs) => {
+			return function (...remainingArgs) {
+				return fn.apply(this, fixedArgs.concat(remainingArgs));
+			};
 		};
 
-		saveImage(uri, path, function(){
-			/* Send the path back to the client side */
-			res.status(200).send(path)
-		});
+		const callbackDOM = embeddedCall(exportDOMAction, res);
+		csInterface.evalScript('BridgeTalk.appName')
+		csInterface.evalScript('exportDOM', callbackDOM);
 
 
 	});

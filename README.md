@@ -166,9 +166,10 @@ nodeJS application I needed to go back, and break-down step-by-step the process 
 5) Debug your code
 * This was definitely the most confusing part of building a plugin; how do you debug what you wrote?
 * Below is a section completely outlining how to debug your panel using VS Code, Chrome, and a text editor.
-* The link that helped me understand debugging:
+* The links that helped me understand debugging:
     * [CEP remote debugging info](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_8.x/Documentation/CEP%208.0%20HTML%20Extension%20Cookbook.md#Remote-Debugging)
-
+    * [PremierePro Panel](https://github.com/Adobe-CEP/Samples/tree/master/PProPanel)
+    
 ### Debugging
 There are three important details I needed to understand before I could successfully debug my panel.
 

@@ -6,7 +6,7 @@ function onLoaded() {
 
 	var APIVersion = csInterface.getCurrentApiVersion();
 	
-	document.getElementById("dragthing").style.backgroundColor = "lightblue";
+	// document.getElementById("dragthing").style.backgroundColor = "lightblue";
 	var caps = csInterface.getHostCapabilities();
 	
 	loadJSX();
