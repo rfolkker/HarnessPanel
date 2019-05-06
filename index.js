@@ -38,9 +38,6 @@ function run(){
 		};
 
 		const callbackDOM = embeddedCall(exportDOMAction, res);
-		csInterface.evalScript('BridgeTalk.appName')
-		csInterface.evalScript('exportDOM', callbackDOM);
-
-
+		csInterface.evalScript("exportDOM()", callbackDOM);
 	});
 }

@@ -19,8 +19,9 @@ function exportDOM(){
 	var retVal = {};
 	for(m in app){
 		if(app.hasOwnProperty(m)) {
-			retVal[m.name] = m.ToString;
+			retVal[m.toStgring()] = app[m];
 		}
 	}
-	return retVal;
+
+	return JSON.stringify(retVal);
 }

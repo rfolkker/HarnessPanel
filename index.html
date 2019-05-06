@@ -18,7 +18,6 @@
 
 <head>
 	<meta charset="utf-8">
-	<script src="./ext.js"></script>
 	<script src="./lib/CSInterface.js"></script>
 	<script src="./lib/jquery-1.9.1.js"></script>
     <script src="./lib/Vulcan.js"></script>
@@ -38,18 +37,8 @@
 	</script>
 </head>
 
-<body onLoad="onLoaded()">
+<body onLoad>
     <a href="javascript:history.go(0)">Refresh panel</a>
     <h3>NodeJS Test on port 3200</h3>
 </body>
-<script>
-	document.body.onbeforeunload = function () {
-		var csInterface = new CSInterface();
-		var OSVersion = csInterface.getOSInformation();
-		var appVersion = csInterface.hostEnvironment.appVersion;
-		var versionAsFloat = parseFloat(appVersion);
-
-        csInterface.evalScript('$._PPP_.closeLog()');
-	};
-</script>
 </html>
